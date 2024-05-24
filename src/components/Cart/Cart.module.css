@@ -1,0 +1,46 @@
+/* Cart.module.css */
+
+.cart {
+    position: fixed;
+    top: 20vh;
+    left: 10%;
+    width: 80%;
+    max-width: 40rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    animation: slide-down 300ms ease-out forwards;
+  }
+  
+  .cart h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .cart button {
+    background: #ff2058;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font: inherit;
+  }
+  
+  .cart button:hover,
+  .cart button:active {
+    background: #ff6589;
+  }
+  
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,14 @@
+/* Meals.module.css */
+
+.meals {
+    width: 90%;
+    max-width: 60rem;
+    margin: 2rem auto;
+  }
+  
+  .meals ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  

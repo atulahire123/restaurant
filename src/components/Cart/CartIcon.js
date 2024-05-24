@@ -1,7 +1,7 @@
-
-const CartIcon=() => {
-    return(
-        <svg
+// CartIcon.js
+const CartIcon = () => {
+    return (
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -12,5 +12,7 @@ const CartIcon=() => {
         <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0 2c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm10-2c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zm0 2c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zM7.78 14.37c.55.25 1.14.38 1.72.38h6.63l1.25-2.48L8.41 6H6V4h3.41l1.25 2.48L16.17 11H9.5l-1.72-3.41L3.1 5.5 2.28 7.28l3.16 1.58 1.34 2.68zM20.27 4h-3.68L13.91 2H10.1L6.41 4H2.73L2 5.5l2 2L4 8.68 6.91 10h8.56l1.77 3.52L19 15.5 22 13.5l-1.73-2z"/>
       </svg>
     );
-};
-export default CartIcon;
+  };
+  
+  export default CartIcon;
+  
