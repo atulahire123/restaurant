@@ -1,16 +1,17 @@
 // src/components/Meals/MealItem/MealItem.js
 import React from 'react';
 import Card from '../../UI/Card';
+import MealItemForm from './MealItemForm';
 import classes from './MealItem.module.css';
 
 const MealItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;
 
-  const addToCartHandler = () => {
+  const addToCartHandler = (amount) => {
     props.onAddToCart({
       id: props.id,
       name: props.name,
-      amount: 1,
+      amount: amount,
       price: props.price,
     });
   };
@@ -24,7 +25,7 @@ const MealItem = (props) => {
           <div className={classes.price}>{price}</div>
         </div>
         <div>
-          <button onClick={addToCartHandler}>Add to Cart</button>
+          <MealItemForm id={props.id} onAddToCart={addToCartHandler} />
         </div>
       </Card>
     </li>

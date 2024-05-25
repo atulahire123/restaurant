@@ -1,4 +1,4 @@
-// MealsSummary.js
+// src/components/Meals/MealsSummary.js
 import React from 'react';
 import classes from './MealsSummary.module.css';
 

@@ -1,0 +1,14 @@
+/* src/components/Meals/AvailableMeals.module.css */
+
+.meals {
+    max-width: 40rem;
+    width: 90%;
+    margin: -1rem auto;
+  }
+  
+  .meals ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  

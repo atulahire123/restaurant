@@ -1,0 +1,38 @@
+/* src/components/Meals/MealItem/MealItemForm.module.css */
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input label {
+    margin-right: 0.5rem;
+  }
+  
+  .input input {
+    width: 3rem;
+    text-align: center;
+  }
+  
+  button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #8a2b06;
+    border: 1px solid #8a2b06;
+    color: white;
+    padding: 0.25rem 2rem;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  button:hover,
+  button:active {
+    background-color: #be481a;
+    border-color: #5a1a01;
+  }
+  
