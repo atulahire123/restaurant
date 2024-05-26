@@ -1,4 +1,3 @@
-// src/components/Meals/MealItem/MealItemForm.js
 import React, { useRef } from 'react';
 import classes from './MealItemForm.module.css';
 
