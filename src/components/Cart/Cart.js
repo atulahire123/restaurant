@@ -1,36 +1,35 @@
-import React from 'react';
+// src/components/Cart/Cart.js
+import React, { useContext } from 'react';
 import classes from './Cart.module.css';
+import CartContext from '../Store/CartContext';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const hasItems = cartCtx.items.length > 0;
+
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
+
   const cartItems = (
     <ul className={classes['cart-items']}>
-      <li className={classes['cart-item']}>
-        <div>
-          <h2>Sushi</h2>
-          <div className={classes.summary}>
-            <span className={classes.price}>$12.99</span>
-            <span className={classes.amount}>x 2</span>
-          </div>
-        </div>
-      </li>
-      <li className={classes['cart-item']}>
-        <div>
-          <h2>Schnitzel</h2>
-          <div className={classes.summary}>
-            <span className={classes.price}>$16.50</span>
-            <span className={classes.amount}>x 1</span>
-          </div>
-        </div>
-      </li>
-      <li className={classes['cart-item']}>
-        <div>
-          <h2>Barbecue Burger</h2>
-          <div className={classes.summary}>
-            <span className={classes.price}>$12.99</span>
-            <span className={classes.amount}>x 3</span>
-          </div>
-        </div>
-      </li>
+      {cartCtx.items.map((item) => (
+        <CartItem
+          key={item.id}
+          name={item.name}
+          amount={item.amount}
+          price={item.price}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onAdd={cartItemAddHandler.bind(null, item)}
+        />
+      ))}
     </ul>
   );
 
@@ -39,13 +38,13 @@ const Cart = (props) => {
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
-        <span>$76.47</span>
+        <span>{totalAmount}</span>
       </div>
       <div className={classes.actions}>
         <button className={classes['button--alt']} onClick={props.onClose}>
           Close
         </button>
-        <button className={classes.button}>Order</button>
+        {hasItems && <button className={classes.button}>Order</button>}
       </div>
     </div>
   );
